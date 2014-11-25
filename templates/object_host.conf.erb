@@ -31,13 +31,13 @@ object Host "<%= @object_hostname %>" {
   <%- if @vars.empty? != true  -%>
   <%- @vars.each_pair do |akey,avalue| -%>
   <%- if avalue.is_a?(Hash) -%>
-  vars.<%= key %> = {
+  vars.<%= akey %> = {
   <%- Hash(avalue).each do |subkey,subvalue|-%>
     <%= subkey %> = <%= subvalue -%>
   }
   <%- end -%>
   <%- else -%>
-  vars.<%= key %> = <%= avalue %>
+  vars.<%= akey %> = <%= avalue %>
   <%- end -%>
   <%- end -%>
   <%- end -%>
