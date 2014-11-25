@@ -34,8 +34,8 @@ object Host "<%= @object_hostname %>" {
   vars.<%= akey %> = {
   <%- avalue.each_pair do |subkey,subvalue|-%>
     <%= subkey %> = <%= subvalue -%>
-  }
   <%- end -%>
+  }
   <%- else -%>
   vars.<%= akey %> = <%= avalue %>
   <%- end -%>
