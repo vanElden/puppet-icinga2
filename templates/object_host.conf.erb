@@ -29,11 +29,11 @@ object Host "<%= @object_hostname %>" {
   groups = [ <%- @groups.each do |group| -%> "<%= group %>", <%- end -%>]
   <%- end -%>
   <%- if @vars.empty? != true  -%>
-  <%- @vars.each_pair do |akey,avalue| -%>
-  <%- if avalue.is_a?(Hash) -%>
-  vars.<%= akey %> = {
-  <%- avalue.each_pair do |subkey,subvalue|-%>
-    <%= subkey %> = <%= subvalue -%>
+  <%- @vars.each_pair do |key,value| -%>
+  <%- if value.is_a?(Hash) -%>
+  vars.<%= key %> = {
+  <%- value.each_pair do |subkey,subvalue|-%>
+    <%= subkey %> = <%= subvalue %>
   <%- end -%>
   }
   <%- else -%>
