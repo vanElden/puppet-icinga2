@@ -30,7 +30,7 @@ object Host "<%= @object_hostname %>" {
   <%- end -%>
   <%- if @vars.empty? != true  -%>
   <%- @vars.each_pair do |key, value| -%>
-  vars.<%= key %> = "<%= value %>"
+  vars.<%= key %> = <%= value %>
   <%- end -%>
   <%- end -%>
   <%- if @check_command -%>
