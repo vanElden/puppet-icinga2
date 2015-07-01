@@ -27,6 +27,8 @@ class icinga2::server (
   $server_enabled_features = $icinga2::params::server_enabled_features,
   $server_disabled_features = $icinga2::params::server_disabled_features,
   $purge_unmanaged_object_files = $icinga2::params::purge_unmanaged_object_files
+  $configtest_enable = $icinga2::params::configtest_enable
+  $service_restart = $icinga2::params::service_restart
 ) inherits icinga2::params {
 
   #Do some validation of parameters so we know we have the right data types:
